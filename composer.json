@@ -1,0 +1,19 @@
+{
+    "name": "xeloses/json-data-file",
+    "type": "library",
+    "description": "Wrapper to work with data stored in JSON file",
+    "keywords": ["json", "file", "storage"],
+    "homepage": "https://github.com/Xeloses/json-data-file",
+    "license": "MIT",
+    "authors": [
+        {"name": "Xeloses"}
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xeloses\\JsonDataFile\\": "lib"
+        }
+    }
+}
