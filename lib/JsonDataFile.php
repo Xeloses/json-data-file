@@ -34,7 +34,7 @@ use Xeloses\JsonDataFile\Exceptions\JsonDataFileException;
  * @method string getFilename()
  * @method void   setOption(string $name, bool $value)
  *
- * Note: methods "array*()" are usable to avid "Indirect modification" error.
+ * Note: methods "array*()" are usable to avoid "Indirect modification" error.
  */
 class JsonDataFile
 {
@@ -72,7 +72,7 @@ class JsonDataFile
      *
      * @throws InvalidArgumentException
      */
-    public function __construct(string $filename, $default = [])
+    public function __construct(string $filename)
     {
         if(!$filename)
         {
@@ -211,7 +211,7 @@ class JsonDataFile
      */
     public function set(string $name, $value = null): void
     {
-        $this->data->{$name} = $value;
+        @$this->data->{$name} = $value;
     }
 
     /**
@@ -289,7 +289,7 @@ class JsonDataFile
      *
      * @return void
      */
-    public function arrayRemove(string $name, $key): void
+    public function arrayRemove(string $array_name, $key): void
     {
         if($this->arrayHasKey($array_name,$key))
         {
@@ -305,7 +305,7 @@ class JsonDataFile
      *
      * @return void
      */
-    public function arrayRemoveValue(string $name, $value): void
+    public function arrayRemoveValue(string $array_name, $value): void
     {
         if($this->has($array_name) && is_array($this->data->{$array_name}))
         {
@@ -381,7 +381,7 @@ class JsonDataFile
     {
         $opt = $this->options['raw_text'] ? JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE : ($this->options['encode_spec_chars'] ? JSON_HEX_TAG|JSON_HEX_AMP|JSON_HEX_APOS|JSON_HEX_QUOT : 0);
 
-        return json_encode($session,JSON_NUMERIC_CHECK|$opt);
+        return json_encode($this->data,JSON_NUMERIC_CHECK|$opt);
     }
 }
 ?>
