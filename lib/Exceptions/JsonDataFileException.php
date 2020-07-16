@@ -18,5 +18,5 @@ namespace Xeloses\JsonDataFile\Exceptions;
  * @package    JsonDataFile
  * @subpackage Exceptions
  */
-class JsonDataFileException extends Exception{}
+class JsonDataFileException extends \Exception{}
 ?>
