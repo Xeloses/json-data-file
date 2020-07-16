@@ -4,7 +4,7 @@
     "description": "Wrapper to work with data stored in JSON file",
     "keywords": ["json", "file", "storage"],
     "homepage": "https://github.com/Xeloses/json-data-file",
-    "license": "MIT",
+    "license": "GPL-3.0",
     "authors": [
         {"name": "Xeloses"}
     ],
