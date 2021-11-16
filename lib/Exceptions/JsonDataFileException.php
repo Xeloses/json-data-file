@@ -7,7 +7,7 @@
  * @package    JsonDataFile (https://github.com/Xeloses/json-data-file)
  * @version    1.0.2
  * @copyright  Xeloses 2018-2020
- * @license    MIT (http://en.wikipedia.org/wiki/MIT_License)
+ * @license    GPL-3.0 (https://www.gnu.org/licenses/gpl-3.0.html)
  */
 
 namespace Xeloses\JsonDataFile\Exceptions;
